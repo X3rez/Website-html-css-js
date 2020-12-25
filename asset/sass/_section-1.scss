@@ -1,0 +1,67 @@
+.section-1 {
+    margin: 0 auto;
+    padding: 2em;
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-areas: "first  first"
+                         "second  third"
+                         "fourth  fifth"
+                         "sixth  seventh";
+    gap: 2em 5em;
+    font-size: 1.4rem;
+    &__title{
+        grid-area: first;
+        text-align: center;
+    }
+    & :nth-child(2){
+        grid-area: second;
+    }
+    & :nth-child(3){
+        grid-area:third;
+    }
+    & :nth-child(4){
+        grid-area: fourth;
+    }
+    & :nth-child(5){
+        grid-area: fifth;
+    }
+    & :nth-child(6){
+        grid-area: sixth;
+    }
+    & :nth-child(7){
+        grid-area: seventh;
+    }
+    &__h3{
+        position: relative;
+        margin-bottom: .5em;
+    }
+    &__icon{
+        color:$thirdColor;
+        font-size: 35px;
+        position: absolute;
+        right: 103%;
+    }
+    @media screen and (max-width:850px) {
+        font-size: 16px;
+        text-align: center;
+        width: 100%;
+        .section-1__icon{
+            display: block;
+            font-size: 35px;
+            margin-bottom: .5em;
+            position: relative;
+            right: 0;
+        }
+        grid-template-columns: repeat(auto-fill, minmax(max-content, 1fr));
+        grid-template-rows: repeat(auto-fit, minmax(max-content, 1fr));
+        grid-template-areas: "first  first"
+                                "second second"
+                                "third third"
+                                "fourth fourth" 
+                                "fifth fifth"
+                                "sixth sixth" 
+                                "seventh seventh"; 
+   }
+}

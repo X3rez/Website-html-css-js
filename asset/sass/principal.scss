@@ -1,0 +1,25 @@
+@import "variables";
+@import "reset";
+@import "scroll";
+@import "header";
+@import "main";
+@import "menu";
+@import "fonts";
+@import "section-1";
+
+
+@media screen and (max-width:850px) {
+    body{
+        font-size: 14px;
+    }
+}
+
+@each $color in "red","blue", "green"{
+    $i: 6;
+    @while $i > 0{
+        .#{$color}-#{$i}{
+            color:#{$color};
+        }
+    $i: $i - 2;
+    }
+}
